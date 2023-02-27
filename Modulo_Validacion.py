@@ -33,7 +33,7 @@ def valFloat(*argu):
         if type(argu[1]) != list and type(argu[1]) != tuple:
             raise TypeError
         elif (argu[1][0]>argu[1][1] or (len(argu[1])>2 or len(argu[1])==0)):
-            raise ValueError("El segundo argumento no esta ordenado de manera creciente")  
+            raise ValueError
         elif type(argu[0]) == float and (type(argu[1]) == list and argu[0]>=argu[1][0] and argu[0]<=argu[1][1] or type(argu[1]) == tuple and argu[0]>argu[1][0] and argu[0]<argu[1][1]):
             result = True
         else:
@@ -49,9 +49,9 @@ def valComplex(*argu):
             result = False
     elif len(argu) == 2:
         if type(argu[1]) != list and type(argu[1]) != tuple:
-            raise TypeError("El segundo argumento debe ser una lista o tupla")
+            raise TypeError
         elif (argu[1][0]>argu[1][1] or (len(argu[1])>2 or len(argu[1])==0)):
-            raise ValueError("El segundo argumento no esta ordenado de manera creciente")  
+            raise ValueError
         elif type(argu[0]) == complex and (type(argu[1]) == list and abs(argu[0])>=argu[1][0] and abs(argu[0])<=argu[1][1] or type(argu[1]) == tuple and abs(argu[0])>argu[1][0] and argu[0]<argu[1][1]):
             result = True
         else:
@@ -79,8 +79,8 @@ def valList(*argu):
             else:
                 result = False
         elif (type(argu[1]) != type(6) and type(argu[2]) != type("x")) or (type(argu[1]) != type([7,2]) and type(argu[2]) != type("u")):
-            raise TypeError("Los argumentos de la posicion 1(uno) y 2(dos) ingresados no son validos ")
+            raise TypeError
         elif argu[2]!= ("value" and list):
-            raise ValueError("El tercer argumento solo permite como entrada (value o lista) y usted introdujo: {}".format(argu[2]))
+            raise ValueError
     return result
 
